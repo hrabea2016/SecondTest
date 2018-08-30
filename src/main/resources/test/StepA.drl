@@ -16,7 +16,4 @@ rule "Step A"
 		modify( e ) {
 			setAge( 10 );
 		}
-		
-	System.out.println("Human bevor " + e);
-	System.out.println("Human bevor " + hu);
 end
