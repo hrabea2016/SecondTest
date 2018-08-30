@@ -1,0 +1,22 @@
+package test;
+
+import test.FirstHuman;
+import test.SecondHuman;
+
+rule "Step A"
+	dialect "mvel"
+	when
+	    e : FirstHuman()
+	    not SecondHuman()
+	then
+		SecondHuman hu = new SecondHuman();
+	   	hu.setName("B");
+		insert(hu);
+		
+		modify( e ) {
+			setAge( 10 );
+		}
+		
+	System.out.println("Human bevor " + e);
+	System.out.println("Human bevor " + hu);
+end

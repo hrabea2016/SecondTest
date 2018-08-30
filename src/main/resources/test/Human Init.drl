@@ -1,0 +1,13 @@
+package test;
+
+import test.FirstHuman;
+
+rule "FirstHuman Init"
+	dialect "mvel"
+	when
+	   not FirstHuman()
+	then
+   		FirstHuman hu = new FirstHuman();
+   		hu.setName("A");
+		insert(hu);		
+	end
